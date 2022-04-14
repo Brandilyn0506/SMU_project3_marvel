@@ -10,6 +10,7 @@ function getData() {
         for (i=0; i< 100; i++) {
             if (data[i].Gender === "Male" && data[i].Alignment === "bad") {
                 labels.splice(4, 0, data[i].Name);
+                // parents.push("Bad" for  data[i].Name.length) ?
                 console.log(labels.length);
                 console.log(labels);
             } else if (data[i].Gender ==="Male" && data[i].Alignment === "good") {
