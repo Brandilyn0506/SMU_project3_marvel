@@ -7,27 +7,26 @@ function getData() {
     d3.csv("static/data/sunburst.csv").then(function(data) {
         // console.log(data);
         labels = ["Male", "Female", "Bad", "Good", "Bad ", "Good "];
-        console.log(labels.indexOf("Good"));
-        for (i=0; i< 5; i++) {
-            console.log(data[i].Gender);
-            if (data[i].Gender ==="Male" && data[i].Alignment === "bad") {
-                labels.push(indexOf("Bad ").data[i].Name);
+        for (i=0; i< 100; i++) {
+            if (data[i].Gender === "Male" && data[i].Alignment === "bad") {
+                labels.splice(4, 0, data[i].Name);
+                console.log(labels.length);
+                console.log(labels);
             } else if (data[i].Gender ==="Male" && data[i].Alignment === "good") {
-                labels.push(indexOf("Bad ", -1));
+                labels.splice(((labels.length) - 2), data[i].Name );
+                console.log(labels.length)
             } else if (data[i].Gender ==="Female" && data[i].Alignment === "bad") {
-                labels.push(indexOf("Good ", 1).data[i].Name);
+                labels.push(data[i].Name);
             } else {
                 labels.push(data[i].Name);
             }}
-        console.log(labels);
-        // }
-    })
-}
-// labels.push(indexOf((labels.indexOf("Good ") + 1))
+        }
+        // parents = ["", "", "Male", "Male", {Bad for the amount of names added in first part of if statement}, {Good for as many in if statement}, "Female", "Female", {bad for as many in if}, {good for as many in if} ]
+    )}
 
     // var data = [{
     //     type: "sunburst",
-    //     labels: ["Male", "Female", "Bad", "Good", "Abomb", "Abe Sapien", "Abomination", "Amazo", "Bad ", "Good ", "Arclite", "Bloodaxe", "Angel Salvadore", "Arachne"],
+    //     labels: labels,
     //     parents: ["", "","Male","Male","Good","Good","Bad", "Bad","Female", "Female", "Bad ","Bad ","Good ","Good "],
     //     outsidetextfont: {size: 20, color: "#377eb8"},
     //     // leaf: {opacity: 0.4},
