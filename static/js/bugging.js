@@ -91,3 +91,16 @@
     //   }).catch(function(error) {
     //     console.log(error);
     //   });
+
+          // function unpack(rows, key) {
+      //   return rows.map(function(row) { return row[key]; });
+      // }
+  // var data = [
+  //     {
+  //       type: "sunburst",
+  //       maxdepth: 3,
+  //       ids: unpack(rows, 'ids'),
+  //       labels: unpack(rows, 'labels'),
+  //       parents:unpack(rows, 'parents')
+  //     }
+  //   ];
